@@ -18,6 +18,8 @@ module.exports = function(digits){
     palindromeThreeDigAlt();
   } else if (digits === 4){
     palindromeFourDigAlt();
+  } else if (digits === 5){
+    palindromeFiveDigAlt();
   }
 
   function twoDigitPalindromeFactor(){
@@ -74,6 +76,34 @@ module.exports = function(digits){
                   factor_1 = palindromeNumber/fact;
                   return;
                 }
+            };
+          }
+        };
+      }
+    }
+  }
+
+  function palindromeFiveDigAlt(){
+    var palindromeArray = [];
+    for (var outest = 9; outest >= 0; outest--) {
+      for (var mid =  9; mid >= 0; mid--) {
+        for (var inner = 9; inner >= 0; inner--) {
+          for (var innest = 9; innest >= 0; innest--) {
+            for (var innerest = 8; innerest >= 0; innerest--) {
+
+            var palindromeArray = [];
+            palindromeArray.push(outest,mid,inner,innest,innerest,innerest,innest,inner,mid,outest)
+            palindromeNumber = Number(palindromeArray.join(''));
+            for (var fact = 99999; fact >= 10000; fact--) {
+               if(palindromeNumber%fact === 0 && palindromeNumber/fact<=99999){
+                  factor_0 = fact;
+                  factor_1 = palindromeNumber/fact;
+                  console.log(palindromeNumber)
+                  console.log(factor_0,factor_1)
+                  return;
+                }
+
+              }
             };
           }
         };
