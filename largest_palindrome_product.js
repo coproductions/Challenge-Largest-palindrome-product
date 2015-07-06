@@ -16,6 +16,8 @@ module.exports = function(digits){
     twoDigitPalindromeFactor();
   } else if ( digits === 3){
     palindromeThreeDigAlt();
+  } else if (digits === 4){
+    palindromeFourDigAlt();
   }
 
   function twoDigitPalindromeFactor(){
@@ -51,6 +53,29 @@ module.exports = function(digits){
                 return;
               }
           };
+        };
+      }
+    }
+  }
+
+  function palindromeFourDigAlt(){
+    var palindromeArray = [];
+    for (var outest = 9; outest >= 0; outest--) {
+      for (var mid =  9; mid >= 0; mid--) {
+        for (var inner = 9; inner >= 0; inner--) {
+          for (var innest = 8; innest >= 0; innest--) {
+
+            var palindromeArray = [];
+            palindromeArray.push(outest,mid,inner,innest,innest,inner,mid,outest)
+            palindromeNumber = Number(palindromeArray.join(''));
+            for (var fact = 9999; fact >= 1000; fact--) {
+               if(palindromeNumber%fact === 0 && palindromeNumber/fact<=9999){
+                  factor_0 = fact;
+                  factor_1 = palindromeNumber/fact;
+                  return;
+                }
+            };
+          }
         };
       }
     }
