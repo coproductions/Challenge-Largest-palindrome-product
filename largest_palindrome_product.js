@@ -98,8 +98,6 @@ module.exports = function(digits){
                if(palindromeNumber%fact === 0 && palindromeNumber/fact<=99999){
                   factor_0 = fact;
                   factor_1 = palindromeNumber/fact;
-                  console.log(palindromeNumber)
-                  console.log(factor_0,factor_1)
                   return;
                 }
 
