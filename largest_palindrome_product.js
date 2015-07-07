@@ -10,7 +10,6 @@ module.exports = function(digits){
   var factor_0 = 0;
   var factor_1 = 0;
   var palindromeNumber = 0;
-  var palindromeString;
 
   calculateHigestFactors(digits)
 
@@ -21,14 +20,14 @@ module.exports = function(digits){
       array.push(9);
       n--
     }
-    var startNum = Number(array.join(''));
+    var maxFactor = Number(array.join(''));
     var minFactor =Math.pow(10,digits)/10;
-    for (var i=startNum ; i>0; i--){
+    for (var i=maxFactor ; i>0; i--){
 
       var firstHalfArray = i.toString().split('');
       palindromeNumber = Number(firstHalfArray.join('').concat(firstHalfArray.reverse().join('')))
-      for (var fact = startNum; fact >= minFactor; fact--) {
-        if(palindromeNumber%fact === 0 && palindromeNumber/fact<=startNum){
+      for (var fact = maxFactor; fact >= minFactor; fact--) {
+        if(palindromeNumber%fact === 0 && palindromeNumber/fact<=maxFactor){
           factor_0 = fact;
           factor_1 = palindromeNumber/fact;
           return;
